@@ -1,16 +1,27 @@
 # TO-DO: Complete the selection_sort() function below
+arr = [5, 10, 2, 9, 3, 6, 21, 14]
 def selection_sort(arr):
     # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
+    for i in range(0,len(arr) - 1):
         cur_index = i
+
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
+        for j in range(i+ 1, len(arr)):
+
+             # print(f"smallest: {arr[smallest_index]}, next:{arr[j]}")
+
+            if arr[cur_index] > arr[j]:
+                cur_index = j
+
 
 
         # TO-DO: swap
         # Your code here
+        print(f"current: {arr[cur_index]}, smallest:{arr[smallest_index]}")
+        arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
 
     return arr
 
@@ -44,3 +55,8 @@ def counting_sort(arr, maximum=None):
 
 
     return arr
+
+
+
+selection_sort(arr)
+print(arr)
